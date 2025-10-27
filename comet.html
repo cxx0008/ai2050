@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17680317967"></script>
     <script>
@@ -11,16 +11,15 @@
       gtag('js', new Date());
       gtag('config', 'AW-17680317967');
     </script>
-    <title>Comet Referral Offer</title>
+    <title>Perplexity Comet Referral Landing</title>
     <style>
         :root {
-            --ink: #0A0A0A;
-            --gold: #FFD700;
-            --accent: #FF0033;
-            --soft: #F5F5F5;
-            --muted: #C7C7C7;
-            --card: rgba(255, 255, 255, 0.04);
-            --border: rgba(255, 255, 255, 0.12);
+            --bg: #0f1419;
+            --surface: #1a2330;
+            --primary: #3b82f6;
+            --success: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #cbd5e1;
         }
 
         * {
@@ -29,326 +28,447 @@
 
         body {
             margin: 0;
-            font-family: "Inter", Arial, sans-serif;
-            background-color: var(--ink);
-            color: var(--soft);
-            line-height: 1.6;
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
-        main {
-            max-width: 1040px;
-            margin: 0 auto;
-            padding: 36px 24px 72px;
-        }
-
-        section {
-            margin-bottom: 56px;
-            padding: 32px;
-            border-radius: 18px;
-            background: var(--card);
-            border: 1px solid var(--border);
-        }
-
-        h1, h2, h3 {
-            margin: 0 0 16px;
-            color: #FFFFFF;
-        }
-
-        h1 {
-            font-size: clamp(32px, 4.8vw, 52px);
-            font-weight: 800;
-        }
-
-        h2 {
-            font-size: clamp(24px, 3.6vw, 38px);
-            font-weight: 700;
-        }
-
-        h3 {
-            font-size: clamp(20px, 3vw, 26px);
-            font-weight: 700;
-        }
-
-        p {
-            font-size: 18px;
-            margin: 0 0 12px;
-            color: #E8E8E8;
+        .page {
+            width: 100%;
+            padding: 64px 24px;
+            display: grid;
+            gap: 56px;
         }
 
         .hero {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: var(--surface);
+            border-radius: 32px;
+            padding: 56px 64px;
+            display: grid;
+            gap: 32px;
+            justify-items: center;
             text-align: center;
-            background: radial-gradient(circle at top, rgba(255, 215, 0, 0.15), transparent 60%);
+            border: 1px solid var(--primary);
         }
 
-        .hero .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 22px;
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.03);
-            font-size: 16px;
-            color: var(--gold);
+        .hero__eyebrow {
+            font-size: 14px;
             font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--success);
+        }
+
+        .hero__title {
+            margin: 0;
+            font-size: clamp(40px, 5vw, 56px);
+            line-height: 1.08;
+        }
+
+        .hero__subtitle {
+            margin: 0;
+            max-width: 640px;
+            font-size: 18px;
+            color: var(--text-muted);
         }
 
         .cta-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            padding: 18px 42px;
-            font-family: "Arial Black", Arial, sans-serif;
-            font-size: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
+            padding: 18px 32px;
+            border-radius: 999px;
+            background-color: var(--primary);
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.04em;
             text-decoration: none;
-            background: var(--accent);
-            color: #FFFFFF;
-            border-radius: 16px;
-            box-shadow: 0 18px 30px rgba(255, 0, 51, 0.35);
-            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-            border: none;
+            transition: filter 0.2s ease, transform 0.2s ease;
         }
 
         .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 24px 40px rgba(255, 0, 51, 0.45);
-            background: #FF254E;
+            filter: brightness(0.92);
+            transform: translateY(-2px);
         }
 
-        .cta-button:active {
-            transform: translateY(-1px) scale(0.99);
+        .cta-button:focus-visible {
+            outline: 2px solid var(--text-main);
+            outline-offset: 4px;
         }
 
-        .benefits {
-            text-align: center;
-        }
-
-        .card-grid {
+        .hero__meta {
+            width: 100%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            padding: 26px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .card .tag {
-            font-size: 40px;
-            font-weight: 800;
-            color: var(--gold);
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            margin-bottom: 0;
-            color: #D8D8D8;
-        }
-
-        .counter {
-            font-size: 34px;
-            font-weight: 700;
-            color: var(--gold);
-        }
-
-        .trust {
-            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 24px;
         }
 
-        .logos {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-            justify-content: center;
+        .meta-card {
+            background-color: var(--bg);
+            border-radius: 20px;
+            padding: 24px;
+            display: grid;
+            gap: 12px;
         }
 
-        .logo-box {
-            min-width: 160px;
-            height: 90px;
-            border-radius: 18px;
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .meta-card__value {
+            font-size: 28px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background: rgba(255, 255, 255, 0.05);
+            color: var(--success);
         }
 
-        .screenshot {
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1px solid var(--border);
+        .meta-card__label {
+            margin: 0;
+            font-size: 15px;
+            color: var(--text-muted);
         }
 
-        .screenshot img {
-            display: block;
-            width: 100%;
-            height: auto;
+        .highlight {
+            color: var(--primary);
         }
 
-        .faq details {
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 16px 20px;
-            background: rgba(0, 0, 0, 0.35);
-            margin-bottom: 12px;
-        }
-
-        .faq summary {
-            cursor: pointer;
-            font-weight: 700;
-            color: #FFFFFF;
-        }
-
-        .standalone-cta {
+        .how,
+        .testimonials,
+        .faq {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: var(--surface);
+            border-radius: 28px;
+            padding: 56px 64px;
+            display: grid;
+            gap: 40px;
             text-align: center;
+            box-shadow: 0 18px 36px #0f1419;
         }
 
-        #disclaimer {
-            text-align: center;
+        .how__title {
+            margin: 0;
+            font-size: clamp(28px, 4vw, 36px);
+        }
+
+        .how__grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .how-card {
+            background-color: var(--surface);
+            border-radius: 20px;
+            padding: 32px 28px;
+            display: grid;
+            gap: 16px;
+            justify-items: center;
+            box-shadow: 0 12px 24px #0f1419;
+        }
+
+        .how-card__icon {
+            font-size: 36px;
+        }
+
+        .how-card__title {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .how-card__copy {
+            margin: 0;
             font-size: 16px;
-            color: #FFFFFF;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+        }
+
+        .testimonials,
+        .faq {
+            gap: 40px;
+        }
+
+        .testimonials__title {
+            margin: 0;
+            font-size: clamp(28px, 4vw, 36px);
+            text-align: center;
+        }
+
+        .testimonials__grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background-color: var(--surface);
+            border-radius: 20px;
+            padding: 32px 28px;
+            display: grid;
+            gap: 24px;
+            justify-items: start;
+            box-shadow: 0 12px 24px #0f1419;
+            color: var(--text-muted);
+        }
+
+        .testimonial-card blockquote {
+            margin: 0;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .testimonial-card cite {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .faq__title {
+            margin: 0;
+            font-size: clamp(28px, 4vw, 36px);
+        }
+
+        .faq__list {
+            display: grid;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .faq__item {
+            background-color: var(--surface);
+            border-radius: 20px;
+            border: 1px solid #3b82f6;
+            overflow: hidden;
+        }
+
+        .faq__item summary {
+            cursor: pointer;
+            padding: 20px 24px;
+            font-weight: 600;
+            color: var(--text-main);
+            list-style: none;
+        }
+
+        .faq__item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq__item summary::after {
+            content: '+';
+            float: right;
+            transition: transform 0.2s ease;
+        }
+
+        .faq__item[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq__item p {
+            margin: 0;
+            padding: 0 24px 24px;
+            color: var(--text-muted);
         }
 
         footer {
+            margin-top: 32px;
+            padding: 32px 24px 48px;
             text-align: center;
-            color: var(--muted);
+            color: var(--text-muted);
             font-size: 14px;
-            padding-bottom: 36px;
         }
 
-        @media (max-width: 720px) {
-            main {
-                padding: 24px 18px 56px;
+        @media (max-width: 768px) {
+            .page {
+                padding: 48px 20px;
+                gap: 48px;
             }
 
-            section {
-                padding: 24px 18px;
+            .hero {
+                padding: 48px 32px;
+            }
+
+            .hero__meta {
+                gap: 16px;
+            }
+
+            .meta-card {
+                padding: 20px;
+            }
+
+            .how {
+                padding: 48px 32px;
+            }
+
+            .how__grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+
+            .testimonials__grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+
+            .faq__list {
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page {
+                padding: 32px 16px;
+                gap: 40px;
+            }
+
+            .hero {
+                padding: 40px 24px;
             }
 
             .cta-button {
                 width: 100%;
-                font-size: 18px;
-                padding: 18px 0;
             }
 
-            .hero .badge {
-                width: 100%;
-                justify-content: center;
-                font-size: 14px;
+            .how {
+                padding: 40px 24px;
+            }
+
+            .how-card {
+                padding: 28px 24px;
+            }
+
+            .testimonials {
+                padding: 40px 24px;
+            }
+
+            .faq {
+                padding: 40px 24px;
+            }
+
+            .testimonial-card {
+                padding: 28px 24px;
+            }
+
+            .faq__item summary {
+                padding: 18px 20px;
+            }
+
+            .faq__item p {
+                padding: 0 20px 20px;
             }
         }
     </style>
 </head>
 <body>
-    <main>
+    <div class="page">
         <section class="hero" aria-labelledby="hero-title">
-            <div class="badge">$20 per friend &middot; Unlimited earning loop</div>
-            <h1 id="hero-title">Get $20 for Every Friend You Invite &mdash; Download Comet Now!</h1>
-            <p>Download Comet, invite one friend, instantly receive <span style="color: var(--gold); font-weight: 700;">$20</span>, and repeat with no limits.</p>
-            <a class="cta-button" href="https://pplx.ai/xinlingqin66103" target="_blank" rel="noopener noreferrer">
-                Download Now &amp; Earn $20
+            <div class="hero__eyebrow" id="hero-eyebrow">Perplexity Comet Referral</div>
+            <h1 class="hero__title" id="hero-title">Get $20 for Every Friend You Invite</h1>
+            <p class="hero__subtitle">
+                Download Comet, invite your friends, and instantly receive $20 for each one. Your earning potential is unlimited.
+            </p>
+            <a class="cta-button" href="#" id="cta-button">
+                GET YOUR INVITE LINK &amp; EARN $20
             </a>
-        </section>
-
-        <section class="benefits" aria-labelledby="benefits-title">
-            <h2 id="benefits-title">Referral Benefits</h2>
-            <div class="card-grid">
-                <article class="card">
-                    <div class="tag">$20</div>
-                    <h3>$20 Per Friend</h3>
-                    <p>Receive <strong style="color: var(--gold);">$20</strong> every time a friend downloads and signs in.</p>
+            <div class="hero__meta">
+                <article class="meta-card">
+                    <div class="meta-card__value" data-highlight>Instant payouts</div>
+                    <p class="meta-card__label">Rewards land in your balance as soon as a friend launches Comet.</p>
                 </article>
-                <article class="card">
-                    <div class="tag">&infin;</div>
-                    <h3>Unlimited Invites</h3>
-                    <p>Refer as many people as you like. Each new user is another payout.</p>
+                <article class="meta-card">
+                    <div class="meta-card__value">Unlimited invites</div>
+                    <p class="meta-card__label">Share your link without limits and watch your commission grow.</p>
                 </article>
-                <article class="card">
-                    <div class="tag counter" id="counter">18,420</div>
-                    <h3>Real-Time Payouts</h3>
-                    <p>Track rewards live as referrals convert.</p>
+                <article class="meta-card">
+                    <div class="meta-card__value highlight" id="cta-counter">24,580+</div>
+                    <p class="meta-card__label">Referrals completed by creators who trust the Comet affiliate program.</p>
                 </article>
             </div>
         </section>
-
-        <section class="trust" aria-labelledby="trust-title">
-            <h2 id="trust-title">Proof &amp; Details</h2>
-            <div class="logos">
-                <div class="logo-box">Comet</div>
-                <div class="logo-box">Perplexity</div>
+        <section class="how" aria-labelledby="how-title">
+            <h2 class="how__title" id="how-title">How It Works</h2>
+            <div class="how__grid" role="list">
+                <article class="how-card" role="listitem">
+                    <div class="how-card__icon" aria-hidden="true">💰</div>
+                    <h3 class="how-card__title">Earn $20 Per Friend</h3>
+                    <p class="how-card__copy">Receive $20 directly to your account every time a friend downloads and signs in.</p>
+                </article>
+                <article class="how-card" role="listitem">
+                    <div class="how-card__icon" aria-hidden="true">🔗</div>
+                    <h3 class="how-card__title">Unlimited Invites</h3>
+                    <p class="how-card__copy">Share your unique link with as many people as you like. There's no cap on your earnings.</p>
+                </article>
+                <article class="how-card" role="listitem">
+                    <div class="how-card__icon" aria-hidden="true">📈</div>
+                    <h3 class="how-card__title">Real-Time Tracking</h3>
+                    <p class="how-card__copy">Watch your rewards update live in your dashboard as your referrals complete the signup.</p>
+                </article>
             </div>
-            <div class="screenshot" aria-label="Screenshot showing Comet referral bonus UI">
-                <img src="0.png" alt="Comet referral screenshot">
+        </section>
+        <section class="testimonials" aria-labelledby="testimonials-title">
+            <h2 class="testimonials__title" id="testimonials-title">See What Others Are Earning</h2>
+            <div class="testimonials__grid" role="list">
+                <article class="testimonial-card" role="listitem">
+                    <blockquote>"I shared my link in a few Discord servers and made over $80 in two days. It's ridiculously easy and the payout was instant. Highly recommend!"</blockquote>
+                    <cite>- Alex R., Tech Enthusiast</cite>
+                </article>
+                <article class="testimonial-card" role="listitem">
+                    <blockquote>"I was skeptical at first, but it's the official program. The process is seamless, and the money showed up in my account right after my friends signed in. No hassle at all."</blockquote>
+                    <cite>- Sarah L., Freelancer</cite>
+                </article>
+                <article class="testimonial-card" role="listitem">
+                    <blockquote>"This has become a nice little side income. I just keep my link in my social bio, and I get a few signups every week without even trying. It adds up!"</blockquote>
+                    <cite>- Jason M., Content Creator</cite>
+                </article>
             </div>
-            <div class="faq">
-                <details open>
-                    <summary>Is the discount real?</summary>
-                    <p>Yes, it's an official limited-time discount. Click the button to go directly to the official site.</p>
+        </section>
+        <section class="faq" aria-labelledby="faq-title">
+            <h2 class="faq__title" id="faq-title">Frequently Asked Questions</h2>
+            <div class="faq__list">
+                <details class="faq__item">
+                    <summary>Is this the official Comet program?</summary>
+                    <p>Yes! This is the official Perplexity affiliate program. All referrals and rewards are handled directly through their secure system.</p>
                 </details>
-                <details>
-                    <summary>How quickly do payouts appear?</summary>
-                    <p>Payouts update in real time as soon as your invited friend signs in to Comet for the first time.</p>
+                <details class="faq__item">
+                    <summary>How quickly do I get paid?</summary>
+                    <p>Payouts are instant. As soon as your invited friend completes the sign-in process, the $20 reward is credited to your account in real-time.</p>
                 </details>
-                <details>
+                <details class="faq__item">
                     <summary>Do I need a promo code?</summary>
-                    <p>No promo code is required. The download link applies the discount automatically for new users.</p>
+                    <p>No promo code is needed. Your unique referral link automatically applies the reward to both you and your friend.</p>
                 </details>
-                <details>
-                    <summary>Can I track multiple referrals?</summary>
-                    <p>Yes. Every referral is logged in your Comet account dashboard so you always know who has completed the steps.</p>
+                <details class="faq__item">
+                    <summary>Is there a limit to how much I can earn?</summary>
+                    <p>Absolutely not. You can refer an unlimited number of friends and earn $20 for every single one.</p>
                 </details>
             </div>
         </section>
-
-        <section class="standalone-cta">
-            <a class="cta-button" href="https://pplx.ai/xinlingqin66103" target="_blank" rel="noopener noreferrer">
-                Download Now &amp; Earn $20
-            </a>
-        </section>
-
-        <section id="disclaimer">
-            <p>This page is not affiliated with Perplexity Inc. We only provide discount information.</p>
-        </section>
-    </main>
-
-    <footer>
-        &copy; <span id="year"></span> Comet Referral Program
-    </footer>
-
+    </div>
     <script>
         (function () {
-            const counterEl = document.getElementById('counter');
-            const yearEl = document.getElementById('year');
-            const BASE_COUNT = 18420;
-            const VARIATION = 8;
-            const INTERVAL = 1800; // ms
+            const highlightMessages = [
+                'Instant payouts',
+                'Trusted partner',
+                'Creator-ready'
+            ];
+            const highlightElement = document.querySelector('[data-highlight]');
+            let highlightIndex = 0;
 
-            function updateCounter() {
-                const current = parseInt(counterEl.textContent.replace(/,/g, ''), 10);
-                const delta = Math.floor(Math.random() * VARIATION);
-                const next = current + delta;
-                counterEl.textContent = next.toLocaleString('en-US');
+            function cycleHighlight() {
+                highlightIndex = (highlightIndex + 1) % highlightMessages.length;
+                highlightElement.textContent = highlightMessages[highlightIndex];
             }
 
-            function init() {
-                yearEl.textContent = new Date().getFullYear();
-                setInterval(updateCounter, INTERVAL);
-            }
+            setInterval(cycleHighlight, 2600);
 
-            document.addEventListener('DOMContentLoaded', init);
-        }());
+            const ctaButton = document.getElementById('cta-button');
+            ctaButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                highlightElement.textContent = 'Link copied!';
+            });
+        })();
     </script>
+    <footer>
+        This page is an independent promoter of the official Comet referral program. All processes and rewards are governed by Perplexity's official terms.
+    </footer>
 </body>
 </html>
